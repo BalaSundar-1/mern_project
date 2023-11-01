@@ -14,22 +14,22 @@ import MyOrders from './MyOrders';
 import Icecreamdetails from './icecreamdetails';
 import Error404 from './error404';
 import Contact from './contact';
-// import Intro from './Intro';
-// import Login from './Login';
-// import Register from './Register';
+import Intro from './Intro';
+import Login from './Login';
+import Register from './Register';
 function App() {
   return(
     <center>
       <BrowserRouter>
       <Menu />
     <Routes>
-    {/* <Route path="/" element={<Intro/>} >
+    <Route path="/" element={<Intro/>} >
       <Route index element={<Login/>} />
      <Route path="register"element={<Register/>} />
      <Route path="login"element={<Login/>} />
-     </Route> */}
+     </Route>
    
-      <Route path="/"element={<Home />} />
+      <Route path="/home"element={<Home />} />
       <Route path="/about"element={<About/>}/>
       <Route path="/items"element={<Items/>}/>
       <Route path="/items/:id"element={<Icecreamdetails/>}/>
@@ -45,6 +45,7 @@ function App() {
       <Route path="*"element={<Error404/> }/>
 
     </Routes>
+   
     </BrowserRouter>
     </center>
   )
