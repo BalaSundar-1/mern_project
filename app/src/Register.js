@@ -28,7 +28,7 @@ function Register() {
      else if(res.data==="registered"){
       window.alert("Registration Successful");
       // console.log(registrationDetails);
-       navigate('/login');
+       navigate('');
     }
       else{
         window.alert("email arleady exists");

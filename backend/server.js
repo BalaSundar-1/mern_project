@@ -7,11 +7,25 @@ const bodyParser=require('body-parser')
 const registrations=require('./models/registrationDetails')
 const multer =require('multer')
 const nodemailer=require('nodemailer');
+// const Ice=require('./models/ice.js')
 mongoose.connect("mongodb+srv://22a95a0503:m8UN6AcVgAkEZeTt@cluster0.j7vzml3.mongodb.net/CoffeeShop?retryWrites=true&w=majority")
 .then(console.log("DataBase connected"))
 app.use(bodyParser.json())
+app.use('/images',express.static('public/images'))
+app.use(express.static('public'))
 app.use(cors()) 
 app.use(express.json())
+// const storage = multer.diskStorage({
+//   destination: function (req, file, callback) {
+//     callback(null, 'public/images')
+//   },
+//   filename: function (req, file, callback) {
+//     // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+//     callback(null,file.originalname)
+//   }
+// })
+
+// const upload = multer({ storage: storage })
 app.post("/orderDetails",(req,res,next)=>{
        
     const {name,email,phoneNo,date,time,item}=req.body;
@@ -72,7 +86,7 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, callback) {
       // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      callback(null, Date.now()+"_"+file.originalname)
+      callback(null,file.originalname)
     }
   })
    const upload = multer({ storage: storage })
@@ -84,7 +98,7 @@ app.post("/login",async (req,res,next)=>{
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              user: 'baluseendripu123@gmail.com',
+              user: 'nandepuphanishankar@gmail.com',
               pass: 'cbcn igft iuyj czvs'
             }
           });

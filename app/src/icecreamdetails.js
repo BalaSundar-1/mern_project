@@ -7,9 +7,10 @@ function Icecreamdetails()
   const {id}=useParams();
     const a = useNavigate();
 
-  function get()
-   {
-     a(`/customerdetails/${id}`);
+  function get(id)
+   {  
+    a("/intro/login")
+    // a(`/customerdetails/${id}`);
   }
    
     // console.log(params);

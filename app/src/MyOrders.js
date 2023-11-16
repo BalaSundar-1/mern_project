@@ -39,18 +39,18 @@ function MyOrders() {
         myOrders&& myOrders.map((eachOrder)=>{
             return ( 
             <div key={eachOrder._id} id='myorders'>
-            <h4>{eachOrder.item}</h4>
+            {/* <h4>{eachOrder.item}</h4> */}
+            <h4>vennela</h4>
             <h4>{eachOrder.date}</h4>
             <h4>{eachOrder.time}</h4>
-           
             <button onClick={()=>handleDelete(eachOrder._id)}>Cancel Order</button>
             </div>
             )
         })
       }
    </div>
-  )
-}
+  );
+};
 function LoadingSpinner() {
     return (
       <div className="spinner-container">
